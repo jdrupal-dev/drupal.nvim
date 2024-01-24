@@ -20,6 +20,13 @@ services.setup = function(conf)
     pattern = "*.yml,*.php",
     callback = function ()
       local current_dir = getPath(vim.api.nvim_buf_get_name(0));
+      -- Early return if current_dir is not a file in the file system.
+      -- INFO: This has not been tested on Windows.
+      if
+        string.sub(current_dir, 1, 2) ~= "C:" and
+        string.sub(current_dir, 1, 1) ~= "/" then
+        return
+      end
       -- Clear list of service names to avoid duplicates.
       service_names = {}
       vim.fn.jobstart(
