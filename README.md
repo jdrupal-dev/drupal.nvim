@@ -47,7 +47,9 @@ To trigger the autocompletion of services you need to input the trigger characte
 \Drupal::service('@entity_') // Now you should see services beginning with entity_.
 ```
 
-### Snippets for hooks
+### Snippets
+
+A few practical snippets are provided, you can find the complete list of snippets in `lua/drupal/snippets/docs.md`.
 
 LuaSnip snippets are automatically generated for hooks when opening nvim in a Drupal project.
 

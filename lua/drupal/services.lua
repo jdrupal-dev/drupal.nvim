@@ -7,6 +7,21 @@ local getPath = function(str)
   return str:match("(.*/)")
 end
 
+
+-- drush ev "echo \Drupal::service('entity_type.manager')::class;"
+vim.api.nvim_create_user_command('Drupal',
+  function(opts)
+    local params = vim.lsp.util.make_position_params()
+    local req_handler = function(err, result, ctx, config)
+      -- local client = vim.lsp.get_client_by_id(ctx.client_id)
+      -- local handler = client.handlers[name] or vim.lsp.handlers[name]
+      -- handler(err, result, ctx, vim.tbl_extend('force', config or {}, options)
+      print(err, vim.inspect(result), vim.inspect(ctx), config)
+    end
+    vim.lsp.buf_request(0, 'textDocument/definition', params, req_handler)
+  end, {})
+
+
 local service_names = {}
 
 services.setup = function(conf)
