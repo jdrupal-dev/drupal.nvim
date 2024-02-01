@@ -3,6 +3,7 @@ local M = {}
 function M.setup(cfg)
   M.__conf = vim.tbl_deep_extend("keep", cfg or {}, require("drupal.default_config"))
   require("drupal.services").setup(M.__conf)
+  require("drupal.autoload_drupal").setup(M.__conf)
   if M.__conf.enabled_snippets.hooks then
     require("drupal.snippets.hooks")
   end

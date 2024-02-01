@@ -1,4 +1,4 @@
-local file_exists = require("drupal.utils.file_utils").file_exists
+local utils = require("drupal.utils")
 local luasnip = require("luasnip")
 
 local s = luasnip.snippet
@@ -10,7 +10,7 @@ local Job = require('plenary.job')
 
 local tmp_file_path = "/tmp/hooks.txt"
 local hooks = {}
-if file_exists(tmp_file_path) then
+if utils.file_exists(tmp_file_path) then
   for line in io.lines(tmp_file_path) do
     table.insert(hooks, line)
   end
