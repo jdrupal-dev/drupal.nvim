@@ -15,7 +15,7 @@ services.setup = function(conf)
   vim.api.nvim_create_autocmd("BufRead", {
     pattern = "*.yml,*.php",
     callback = function ()
-      local current_dir = require("drupal.utils").current_dir()
+      local current_dir = vim.loop.cwd()
       -- Early return if current_dir is not a file in the file system.
       -- INFO: This has not been tested on Windows.
       if

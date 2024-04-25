@@ -44,7 +44,7 @@ vim.api.nvim_create_autocmd("BufRead", {
       table.insert(snippets,
         s(hook_name, {
           t({ "/**", "" }),
-          t({ " * Implements " .. hook_name .. "()", "" }),
+          t({ " * Implements " .. hook_name .. "().", "" }),
           t({ " */", "" }),
           t("function "),
           f(get_filename, {}),
