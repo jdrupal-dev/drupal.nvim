@@ -1,6 +1,6 @@
 # drupal.nvim
 
-**drupal.nvim** - _a little less pain for Drupal developers daring to use neovim._
+**:warning: Archived. Check out [drupal_ls](https://github.com/jdrupal-dev/drupal_ls) which has all of the features from this plugin + much more.**
 
 ## :lock: Requirements
 
